@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+        content="Miscalibrated Judges: A Psychometric Evaluation of LLMs as Hate Speech Raters.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nerfies: Deformable Neural Radiance Fields</title>
+  <title>Miscalibrated Judges: A Psychometric Evaluation of LLMs as Hate Speech Raters</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -88,19 +88,19 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Nerfies: Deformable Neural Radiance Fields</h1>
+          <h1 class="title is-1 publication-title">Miscalibrated Judges: A Psychometric Evaluation of LLMs as Hate Speech Raters</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Keunhong Park</a><sup>1</sup>,</span>
+              <a href="https://mikelkn.github.io/">Mikel K. Ngueajio</a><sup>1,2</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
+              <a href="https://www.linkedin.com/in/battler">Rick Battle</a><sup>3</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
+              <a href="https://toggled.github.io/naheed/">NaheedAnjum Arafat</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
+              <a href="https://www.rawatonline.com/">Danda B. Rawat</a><sup>1</sup>,
             </span>
-            <span class="author-block">
+            {{/*  <span class="author-block">
               <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
             </span>
             <span class="author-block">
@@ -108,12 +108,13 @@
             </span>
             <span class="author-block">
               <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span>
+            </span>  */}}
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>University of Washington,</span>
-            <span class="author-block"><sup>2</sup>Google Research</span>
+            <span class="author-block"><sup>1</sup>Howard University</span>
+            <span class="author-block"><sup>2</sup>CMU Africa</span>
+            <span class="author-block"><sup>3</sup>VMWARE NLP Lab</span>
           </div>
 
           <div class="column has-text-centered">
@@ -138,7 +139,7 @@
                 </a>
               </span>
               <!-- Video Link. -->
-              <span class="link-block">
+              {{/*  <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -146,10 +147,10 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span>  */}}
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/MikelKN/llm-hate-speech-psychometrics"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -159,7 +160,7 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="https://huggingface.co/datasets/ucberkeley-dlab/measuring-hate-speech"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
@@ -178,21 +179,19 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
+      {{/*  <video id="teaser" autoplay muted loop playsinline height="100%">  */}}
+        <source src="./static/images/AIES_METHOD_FINAL_2026.png"
+                type="Hate Thermometer Overview"/>
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">The Hate Thermometer</span> Measuring the hate intensity of a text using LLMs
       </h2>
     </div>
   </div>
 </section>
 
 
-<section class="hero is-light is-small">
+{{/*  <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -247,7 +246,7 @@
       </div>
     </div>
   </div>
-</section>
+</section>  */}}
 
 
 <section class="section">
@@ -258,23 +257,25 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+            We evaluate 5 LLMs as hate speech raters using the Many-Facet Rasch Model (MFRM), 
+            revealing systematic leniency bias and a calibration paradox.
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+            Hate speech annotation is costly, inconsistent, and increasingly delegated to Large Language Models 
+            (LLMs). Yet whether LLMs function as reliable psychometric raters remains unknown. We present 
+            the Hate Thermometer — the first psychometric evaluation of LLMs as hate speech annotators 
+            using the Many-Facet Rasch Model (MFRM).
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
+            Across five LLMs, 582 human annotators, and 250 comments from the Measuring Hate Speech corpus, 
+            we find that all models except GPT-5 exhibit systematic leniency relative to humans. A 
+            counterintuitive calibration paradox emerges: lenient LLMs produce higher calibrated hate scores 
+            after joint MFRM correction. LLMs systematically underestimate dehumanization while overestimating 
+            genocide and violence. Monolithic prompting consistently outperforms modular prompting in 
+            rater consistency. These findings establish MFRM as a principled framework for auditing and 
+            correcting LLM annotation bias in hate speech detection.
+
+            {{/*  We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
             photos/videos into deformable NeRF
             models that allow for photorealistic renderings of the subject from arbitrary
             viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
@@ -282,70 +283,95 @@
             rig with two mobile phones that take time-synchronized photos, yielding train/validation
             images of the same pose at different viewpoints. We show that our method faithfully
             reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            fidelity.  */}}
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper video. -->
+    <!-- Paper Key Finding. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
+        <h2 class="title is-3">Methodology Pipeline</h2>
+        <div class="Methodology Pipeline">
+          <source src="./static/images/AIES_PIPELINE_BEST_2.png"
+                type="Experiment pipeline"/>
           <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
+    <!--/ Paper Key Finding. -->
   </div>
 </section>
 
 
 <section class="section">
   <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Key Findings</h2>
 
+    <!-- Finding 1 -->
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
-      <div class="column">
+      <div class="column is-full-width">
+        <h3 class="title is-4">
+          🌡️ Finding 1: The Leniency Paradox
+        </h3>
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            All LLMs except GPT-5 underestimate hate severity. 
+            Yet after joint MFRM calibration, lenient models 
+            produce <strong>higher</strong> calibrated hate scores — 
+            because MFRM interprets high scores from lenient 
+            raters as strong evidence of true hate severity.
           </p>
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
-                    type="video/mp4">
-          </video>
         </div>
+        <img src="static/images/severity_plot.png" 
+             alt="Rater Severity Plot"/>
       </div>
-      <!--/ Visual Effects. -->
+    </div>
 
-      <!-- Matting. -->
-      <div class="column">
-        <h2 class="title is-3">Matting</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
+    <!-- Finding 2 -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">
+          👁️ Finding 2: The Dehumanization Blind Spot
+        </h3>
+        <div class="content">
+          <p>
+            LLMs systematically miss subtle dehumanization. 
+            Human threshold: δ = 0.485. LLM threshold: 
+            δ = 1.160–1.855. LLMs require far more extreme 
+            content before flagging dehumanizing rhetoric.
+          </p>
+        </div>
+        <img src="static/images/item_difficulty_all.png" 
+             alt="Item Difficulty Comparison"/>
+      </div>
+    </div>
 
+    <!-- Finding 3 -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">
+          ✅ Finding 3: Better Than Human Crowd-Workers
+        </h3>
+        <div class="content">
+          <p>
+            Carefully configured LLMs apply the rating scale 
+            MORE consistently than human crowd-workers. 
+            Claude (mono) achieves Infit MS = 1.266 vs. 
+            human mean of 2.288 — falling within the ideal 
+            Rasch measurement range.
+          </p>
         </div>
       </div>
     </div>
-    <!--/ Matting. -->
 
-    <!-- Animation. -->
+  </div>
+</section>
+
+    {{/*  <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
@@ -407,10 +433,10 @@
 
       </div>
     </div>
-    <!--/ Animation. -->
+    <!--/ Animation. -->  */}}
 
 
-    <!-- Concurrent Work. -->
+    {{/*  <!-- Concurrent Work. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
@@ -438,17 +464,17 @@
     <!--/ Concurrent Work. -->
 
   </div>
-</section>
+</section>  */}}
 
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{ngueajio2026miscalibrated,
+  author    = {Ngueajio, Mikel K. and Battle, Rick and Arafat, Naheed Anjum and Rawat, Danda B.},
+  title     = {Miscalibrated Judges: A Psychometric Evaluation of LLMs as Hate Speech Raters},
+  journal   = {PROCEEDINGS OF AAAI AI FOR ETHICS AND SOCIETY},
+  year      = {2026},
 }</code></pre>
   </div>
 </section>
@@ -474,11 +500,7 @@
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
           <p>
-            This means you are free to borrow the <a
-              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
-            we just ask that you link back to this page in the footer.
-            Please remember to remove the analytics code included in the header of the website which
-            you do not want on your website.
+            Website adapted from template by <a href="https://github.com/nerfies/nerfies.github.io">nerfies.github.io source code</a> 
           </p>
         </div>
       </div>
