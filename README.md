@@ -1,15 +1,12 @@
-# Nerfies
+# The Hate Thermometer 1: Miscalibarted Judges
 
-This is the repository that contains source code for the [Nerfies website](https://nerfies.github.io).
-
-If you find Nerfies useful for your work please cite:
+If you find this work useful, please cite:
 ```
-@article{park2021nerfies
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}
+@article{ngueajio2026miscalibrated,
+  author    = {Ngueajio, Mikel K. and Battle, Rick and Arafat, Naheed Anjum and Rawat, Danda B.},
+  title     = {Miscalibrated Judges: A Psychometric Evaluation of LLMs as Hate Speech Raters},
+  journal   = {PROCEEDINGS OF AAAI AI FOR ETHICS AND SOCIETY},
+  year      = {2026}}
 ```
 
 # Website License
