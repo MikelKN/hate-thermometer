@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/images/fav_icon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -52,7 +52,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://github.com/MikelKN">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -60,20 +60,23 @@
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More Research
+          More Research from Mikel
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
+          <a class="navbar-item" href="https://github.com/MikelKN/hate-thermometer">
+            Miscalibrated Judges: LLMs as Psychometric Raters
           </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
+          <a class="navbar-item" href="https://dl.acm.org/doi/10.1145/3711123">
+            Explainble AI for assessing Hate-fake Nexus
           </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
+          <a class="navbar-item" href="https://aclanthology.org/2025.findings-emnlp.851/">
+            MFTCXplain: Assessing Morality in LLMs
           </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
+          <a class="navbar-item" href="https://aclanthology.org/2025.woah-1.10/">
+            LLM! Think like person before Responding.
+          </a>
+          <a class="navbar-item" href="https://dl.acm.org/doi/10.1007/978-3-031-21707-4_30">
+            Hey Biased AI Voice assitants!
           </a>
         </div>
       </div>
@@ -112,7 +115,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="./static/images/AIES_2026_Final_draft.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -126,7 +129,7 @@
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>arXiv</span>
+                  <span>AAAI AIES</span>
                 </a>
               </span>
               <span class="link-block">
@@ -157,17 +160,19 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-        <source src="./static/images/AIES_METHOD_FINAL_2026.png"
-                type="Hate Thermometer Overview"/>
-      </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">The Hate Thermometer</span> Measuring the hate intensity of text using LLMs
-      </h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Problem</h2>
+          <div class="content has-text-justified">
+      <p>
+        LLMs are increasingly used to scale content moderation, but can we trust them to understand hate speech the way humans do? Human annotations are costly and inconsistent, while AI systems introduce new forms of bias and disagreement. This work systematically examines human and LLM annotation behaviors to uncover where they align, where they diverge, and what this means for trustworthy moderation.
+      </p>
+
+      </div>
+     </div>
     </div>
   </div>
 </section>
-
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -176,54 +181,100 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-          <p>
-            We evaluate 5 LLMs as hate speech raters using the Many-Facet Rasch Model (MFRM), 
-            revealing systematic leniency bias and a calibration paradox.
-          </p>
-          <p>
-            Hate speech annotation is costly, inconsistent, and increasingly delegated to Large Language Models 
-            (LLMs). Yet whether LLMs function as reliable psychometric raters remains unknown. We present 
-            the Hate Thermometer — the first psychometric evaluation of LLMs as hate speech annotators 
-            using the Many-Facet Rasch Model (MFRM).
-          </p>
-          <p>
-            Across five LLMs, 582 human annotators, and 250 comments from the Measuring Hate Speech corpus, 
-            we find that all models except GPT-5 exhibit systematic leniency relative to humans. A 
-            counterintuitive calibration paradox emerges: lenient LLMs produce higher calibrated hate scores 
-            after joint MFRM correction. LLMs systematically underestimate dehumanization while overestimating 
-            genocide and violence. Monolithic prompting consistently outperforms modular prompting in 
-            rater consistency. These findings establish MFRM as a principled framework for auditing and 
-            correcting LLM annotation bias in hate speech detection.
+
+        <img src="./static/images/process.png" alt="Research Questions" class="research-image">
+
+          <p> 
+
+            Our findings reveal that, 
+            <ul>
+              <li><strong>LLMs are systematically more lenient</strong> than human annotators, underestimating implicit hate while overestimating explicit hate—the very cases where early moderation matters most.</li>
+            
+              <li><strong>Prompting strategy matters.</strong> Modular prompting increases leniency while preserving ranking consistency, with DeepSeek showing the greatest sensitivity to prompting design.</li>
+            
+              <li><strong>Raw LLM scores can be misleading.</strong> After psychometric calibration, most LLMs receive higher hate severity scores, highlighting the need for formal severity adjustment before comparison with humans.</li>
+            
+              <li><strong>Human and LLM agreement diverge.</strong> The hate speech dimension with the highest human agreement exhibits the greatest disagreement across LLMs, motivating calibrated alignment with human measurement standards.</li>
+            </ul>
+
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-    <!-- Paper Key Finding. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Methodology Pipeline</h2>
-        <div class="Methodology Pipeline">
-          <source src="./static/images/AIES_PIPELINE_BEST_2.png"
-                type="Experiment pipeline"/>
-        </div>
-      </div>
+<!-- research Questions tested -->
+<section class="section">
+<div class="columns is-centered has-text-centered">
+<div class="column is-four-fifths">
+<h2 class="title is-3 has-text-centered">Research Questions</h2>
+<p class="has-text-centered">
+  We investigate four research questions across ten hate speech dimensions.
+</p>
+<img src="./static/images/research_questions.png" alt="Research Questions" class="research-image">
+</div>
+</div>
+</section>
+
+<!-- Paper Methodology -->
+<section class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3 has-text-centered">Methodology Description</h2>
     </div>
-    <!--/ Paper Key Finding. -->
+  </div>
+
+  <!-- Two columns side by side -->
+  <div class="columns is-centered">
+
+    <!-- LEFT: Pipeline -->
+    <div class="column is-half has-text-centered">
+      
+      <h3 class="title is-4" style="margin-top: 1.2rem;">Methodological Pipeline</h3>
+      
+      <figure class="image">
+        <img src="./static/images/pipeline_with_desc.png"
+             alt="Methodology Pipeline"
+             style="object-fit: contain; width: 100%;"/>
+      </figure>
+    </div>
+
+    <!-- RIGHT: Both annotation schemes stacked -->
+
+    <div class="column is-half has-text-centered">
+      <div style="width: 100%; margin: 0 auto;">
+      <!-- Annotation Scheme Column -->
+      <h3 class="title is-4" style="margin-top: 1.2rem; margin-right:3.5em;">LLM Dimensions Annotation</h3>
+      <figure class="image">
+        <img src="./static/images/annotation_scheme.png"
+              alt="LLM annotation scheme"
+              style="object-fit: contain; width: 82%;"/>
+      </figure>
+
+      <h3 class="title is-4" style="margin-top: 1.2rem; margin-right:3.5em">LLM Hate Speech Annotation</h3>
+      <figure class="image">
+        <img src="./static/images/hs_annotation.png"
+              alt="LLM HS annotation scheme"
+              style="object-fit: contain; width: 82%;"/>
+      </figure>
+    </div>
+    </div>
   </div>
 </section>
+<!--/ Paper Methodology -->
 
 
 <section class="section">
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Key Findings</h2>
+    <div class="content has-text-justified">
 
     <!-- Finding 1 -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-4">
-          🌡️ Finding 1: The Leniency Paradox
+        Finding 1: LLMs are more lenient
+        raters than humans.
         </h3>
         <div class="content">
           <p>
@@ -234,8 +285,6 @@
             raters as strong evidence of true hate severity.
           </p>
         </div>
-        <img src="./static/images/severity_plot_.png" 
-             alt="Rater Severity Plot"/>
       </div>
     </div>
 
@@ -243,42 +292,95 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-4">
-          👁️ Finding 2: The Dehumanization Blind Spot
+        Finding 2: Prompting strategy effects.
         </h3>
         <div class="content">
           <p>
-            LLMs systematically miss subtle dehumanization. 
-            Human threshold: δ = 0.485. LLM threshold: 
-            δ = 1.160–1.855. LLMs require far more extreme 
-            content before flagging dehumanizing rhetoric.
+            Prompting strategy produces meaningful shifts in absolute severity rating while preserving rank-order agreement. 
+            <strong>Modular</strong> prompting despite bieng the most resource costly, produces higher severity ratings than <strong>Monolithic</strong> prompting, 
+            with absolute severity differences ranging from 0.24 logits (Gemini) to 0.79 logits (GPT-5-mini). We attribute this pattern to the <strong>halo effect</strong> (Engelhard Jr 1994).
+            <strong>This finding demonstrates that prompt structure materially influences LLM annotation behavior</strong>.
+          </p>
+        </div>
+        <img src="./static/images/severity_plot_.png" 
+             alt="Rater Severity Plot"/>
+      </div>
+    </div>
+
+     <!-- Finding 3 -->
+     <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">
+          Finding 3: Western Vs non Western Model.
+        </h3>
+        <div class="content">
+          <p>
+            DeepSeek mono falls close to the human mean and performs comparably to Claude mono, Gemini mono and with an absolute 
+            mono-modu logit difference comparable to those of Gemini, consistent with H3, which
+            predicted alignment across Western and non-Western model
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Finding 4 -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">
+          Finding 4: The Dehumanization Blind Spot and Violence, Genocide Divergence
+        </h3>
+        <div class="content">
+          <p>
+            LLMs systematically miss subtle DEHUMNAIZATION. Human threshold: δ = 0.485. LLM threshold: δ = 1.160–1.855. 
+            LLMs require far more extreme content before flagging dehumanizing rhetoric.  Similarly, VIOLENCE and GENO-
+            CIDE show substantial human-LLM divergence, suggesting these dimensions require subjective severity judgment that
+            neither humans nor LLMs resolve consistently.
           </p>
         </div>
         <img src="./static/images/item_difficulties_all.png" 
              alt="Item Difficulty Comparison"/>
       </div>
     </div>
+    </div>
 
-    <!-- Finding 3 -->
+
+    <!-- Finding 5 -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-4">
-          ✅ Finding 3: Better Than Human Crowd-Workers
+        Finding 5: LLM Alignment to Human Crowd-Workers
         </h3>
         <div class="content">
-          <p>
-            Carefully configured LLMs apply the rating scale 
-            MORE consistently than human crowd-workers. 
-            Claude (mono) achieves Infit MS = 1.266 vs. 
-            human mean of 2.288 — falling within the ideal 
-            Rasch measurement range.
-          </p>
+            <ul>
+              <li>LLMs preserve human-like ranking of hate severity but show systematic leniency. MFRM calibration corrects these 
+                rater effects, revealing that raw LLM scores are not directly comparable to human judgments without accounting 
+                for differences in annotation behavior.</li>
+            </ul>
         </div>
+      <img src="./static/images/human_llm_theta.png" 
+           alt="human llm theta Comparison"
+           style="object-fit: contain; width: 90%;"/>
       </div>
     </div>
-
+  </div>
+  <!-- Finding 4 -->
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <h3 class="title is-4">
+        Finding 6: LLM not fit for standalone moderation, but can be used to augment human moderation.
+      </h3>
+      <div class="content">
+        <p>
+          LLM annotation unreliability is concentrated at two intersecting points: <strong> ambiguous dimensions (e.g HUMILIATION, STATUS, DEHUMANIZATION)
+          and low-severity comments</strong>. Both are precisely the cases most relevant to early-stage hate speech intervention, supporting RQ1
+        </p>
+      </div>
+      <img src="./static/images/quantile_biased.png" 
+           alt="quantile_llm_biases"
+           style="object-fit: contain; width: 90%;"/>
+    </div>
   </div>
 </section>
-
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -292,28 +394,27 @@
   </div>
 </section>
 
-
 <footer class="footer">
-  <div class="container">
+  <div class="container is-max-desktop content">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="./static/images/AIES_2026_Final_draft.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/MikelKN" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
-    </div>
+      <a class="icon-link" href="https://scholar.google.com/citations?user=XPwyeRYAAAAJ&hl=en" class="external-link" disabled>
+        <i class="fa-brands fa-google-scholar"></i>
+      </a>
+      <a class="icon-link" href="https://www.linkedin.com/in/mikelngueajio/" class="external-link" disabled>
+        <i class="fab fa-linkedin"></i>
+      </a>
     <div class="columns is-centered">
-      <div class="column is-8">
+      <div class="column is-10">
         <div class="content">
           <p>
-            This website is licensed under a <a rel="license"
-                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <p>
-            Website adapted from template by <a href="https://github.com/nerfies/nerfies.github.io">nerfies.github.io</a> 
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> 
           </p>
         </div>
       </div>
