@@ -1,7 +1,7 @@
 # The Hate Thermometer
 
 **Miscalibrated Judges: A Psychometric Evaluation of LLMs as Hate Speech Raters**  
-*Accepted at AIES 2026 — AAAI/ACM AI, Ethics and Society*
+*Under review at AAAI AISI 2026 — AAAI AI FOR SOCIAL IMPACT*
 
 ---
 
@@ -30,7 +30,7 @@ If you find this work useful, please cite:
                Rawat, Danda B.},
   title     = {Miscalibrated Judges: A Psychometric 
                Evaluation of LLMs as Hate Speech Raters},
-  booktitle = {Proceedings of AAAI/ACM AIES 2026},
+  booktitle = {Proceedings of AAAI/AISI 2026},
   year      = {2026}
 }
 ```

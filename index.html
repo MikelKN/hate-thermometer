@@ -94,9 +94,9 @@
           <h1 class="title is-1 publication-title">Miscalibrated Judges: A Psychometric Evaluation of LLMs as Hate Speech Raters</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://mikelkn.github.io/">Mikel K. Ngueajio</a><sup>1,2</sup>,</span>
+              <a href="https://mikelkn.github.io/">Mikel K. Ngueajio</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://www.linkedin.com/in/battler">Rick Battle</a><sup>3</sup>,</span>
+              <a href="https://www.linkedin.com/in/battler">Rick Battle</a><sup>2</sup>,</span>
             <span class="author-block">
               <a href="https://toggled.github.io/naheed/">NaheedAnjum Arafat</a><sup>1</sup>,
             </span>
@@ -107,29 +107,19 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Howard University</span>
-            <span class="author-block"><sup>2</sup>CMU Africa</span>
-            <span class="author-block"><sup>3</sup>VMWARE NLP Lab</span>
+            <span class="author-block"><sup>2</sup>VMWARE NLP Lab</span>
           </div>
 
           <div class="column has-text-centered">
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="./static/images/AIES_2026_Final_draft.pdf"
+                <a href="./static/images/AAAI_AISI_final_draft_2026.pdf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>AAAI AIES</span>
+                  <span>Draft Paper</span>
                 </a>
               </span>
               <span class="link-block">
@@ -268,42 +258,92 @@
   <div class="container is-max-desktop">
     <h2 class="title is-3 has-text-centered">Key Findings</h2>
     <div class="content has-text-justified">
-
-    <!-- Finding 1 -->
+      <!--Finding 1-->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-4">
-        Finding 1: LLMs are more lenient
-        raters than humans.
+          Finding 1: LLMs Are Systematic but Miscalibrated Raters
         </h3>
         <div class="content">
           <p>
-            All LLMs except GPT-5 underestimate hate severity. 
-            Yet after joint MFRM calibration, lenient models 
-            produce <strong>higher</strong> calibrated hate scores — 
-            because MFRM interprets high scores from lenient 
-            raters as strong evidence of true hate severity.
+            Most LLM configurations are systematically more lenient than 
+            human annotators — all except <strong>GPT-5</strong> fall below 
+            the human mean severity. Yet all LLM configurations cluster within 
+            ~2.0 logits, occupying less than 25% of the 8-logit human severity 
+            range. This suggests LLMs are <strong>systematically biased </strong> 
+            than human raters. We believe this bias can in principle be corrected 
+            through psychometric calibration. Moreover, we notice that 6 out of of 9 LLM 
+            configurations outperform the human baseline on Infit Mean Statistics, 
+            demonstrating that carefully configured LLMs can apply psychometric scales 
+            <strong>more consistently</strong>  than crowd-sourced human annotators.
+          </p>
+        </div>
+        <img src="./static/images/severity_plot_.png"
+             alt="LLM vs Human Severity Distribution"/>
+      </div>
+    </div>
+
+    <!-- Finding 2: Item Difficulty -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">
+          Finding 2: Consistent Dimension Difficulty Ordering
+        </h3>
+        <div class="content">
+          <p>
+            The relative difficulty of hate speech dimensions is preserved across all model families and 
+            prompting strategies. <strong>Sentiment</strong>, <strong>Insult</strong>, <strong>Respect</strong>, and <strong>Attack-Defend</strong> 
+            are consistently the easiest dimensions to endorse, while <strong>Dehumanization</strong>, 
+            <strong>Genocide</strong>, and <strong>Violence</strong> are consistently the hardest. Human-LLM item difficulty 
+            correlations range from <em>r</em> = 0.834 to 0.948 (all <em>p</em> &lt; .001), confirming that LLMs share 
+            humans' understanding of which hate speech constructs are most difficult to endorse.
+          </p>
+        </div>
+        <img src="./static/images/item_difficulties_all.png"
+             alt="Item Difficulty Comparison 
+                  Across Models"/>
+      </div>
+    </div>
+
+    <!-- Finding 3: Dehumanization Blind Spot -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-4">
+          Finding 3: The Dehumanization Blind Spot
+        </h3>
+        <div class="content">
+          <p>
+            LLMs systematically miss subtle dehumanization. While humans place dehumanization at 
+            &delta;<sub>i</sub> = 0.485, all LLM configurations place it substantially higher 
+            (&delta;<sub>i</sub> = 1.160–1.855), indicating they require far more extreme content before flagging 
+            dehumanizing rhetoric — precisely the dimension most linked to real-world escalation pathways. 
+            At the same time, <strong>Violence</strong> and <strong>Genocide</strong> show substantial human-LLM divergence, 
+            meaning they require subjective severity judgment that neither humans nor LLMs resolve 
+            consistently. The three-class <strong>Hate Speech</strong> label, despite showing the highest 
+            human inter-rater reliability (according to Sachdeva at al, 2022) — 
+            produces the greatest cross-model LLM disagreement (&Delta;&delta; = 1.510 logits), 
+            <strong>underscoring that high human agreement does not guarantee consistent LLM behavior.</strong>
           </p>
         </div>
       </div>
     </div>
 
-    <!-- Finding 2 -->
+    <!-- Finding 4: Prompting Strategy -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-4">
-        Finding 2: Prompting strategy effects.
+          Finding 4: Prompting Strategy Materially Affects Severity
         </h3>
         <div class="content">
           <p>
-            Prompting strategy produces meaningful shifts in absolute severity rating while preserving rank-order agreement. 
-            <strong>Modular</strong> prompting despite bieng the most resource costly, produces higher severity ratings than <strong>Monolithic</strong> prompting, 
-            with absolute severity differences ranging from 0.24 logits (Gemini) to 0.79 logits (GPT-5-mini). We attribute this pattern to the <strong>halo effect</strong> (Engelhard Jr 1994).
-            <strong>This finding demonstrates that prompt structure materially influences LLM annotation behavior</strong>.
+            Prompting strategy produces meaningful shifts in absolute severity while preserving rank-order agreement. 
+            <strong>Modular</strong> prompting; despite being the most resource intensive, produces higher severity ratings than 
+            <strong>Monolithic</strong> prompting, with absolute differences ranging from 0.24 logits (Gemini) to 
+            0.79 logits (GPT-5-mini). We attribute this to the cross-dimensional anchoring effect: under monolithic 
+            prompting, evaluating all dimensions simultaneously allows ratings to anchor each other, yielding more 
+            conservative individual ratings.
           </p>
         </div>
-        <img src="./static/images/severity_plot_.png" 
-             alt="Rater Severity Plot"/>
       </div>
     </div>
 
@@ -311,73 +351,54 @@
      <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-4">
-          Finding 3: Western Vs non Western Model.
+          Finding 3: Cross Cultural Model Comparison.
         </h3>
         <div class="content">
           <p>
-            DeepSeek mono falls close to the human mean and performs comparably to Claude mono, Gemini mono and with an absolute 
-            mono-modu logit difference comparable to those of Gemini, consistent with H3, which
-            predicted alignment across Western and non-Western model
+            <strong>DeepSeek</strong> (mono) falls close to the human mean and performs comparably to 
+            <strong>Claude</strong> mono and <strong>Gemini</strong> mono under monolithic prompting. consistent with our hypothesis 
+             and smiliar scholarly work which posit that pretraining data convergence 
+            across model families thus producing similar severity profiles regardless of model origin. 
+            However, <strong>DeepSeek</strong> (modu) shows disproportionate sensitivity suggesting that 
+            cultural training differences may surface only when cross-dimensional anchoring 
+            is removed.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- Finding 4 -->
+    <!-- Finding 6: Reliability -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-4">
-          Finding 4: The Dehumanization Blind Spot and Violence, Genocide Divergence
+          Finding 6: Psychometric 
+          Validation and Reliability
         </h3>
         <div class="content">
           <p>
-            LLMs systematically miss subtle DEHUMNAIZATION. Human threshold: δ = 0.485. LLM threshold: δ = 1.160–1.855. 
-            LLMs require far more extreme content before flagging dehumanizing rhetoric.  Similarly, VIOLENCE and GENO-
-            CIDE show substantial human-LLM divergence, suggesting these dimensions require subjective severity judgment that
-            neither humans nor LLMs resolve consistently.
+            To validate our framework, we compute separation reliability and item-level fit statistics 
+            from the joint MFRM calibration. Separation reliability far exceeds the recommended threshold 
+            of 0.80 (Item: 0.996, Person: 0.989), confirming that observed differences between raters and 
+            dimensions reflect genuine measurement phenomena rather than noise. Joint MFRM calibration achieves 
+            <em>r</em> = 0.819 with the Kennedy et al. gold standard (<em>p</em> &lt; .001, MAE = 0.979), validating 
+            RaschPy as an open-source alternative to closed-source Winsteps for reproducible 
+            hate speech psychometrics.
           </p>
         </div>
-        <img src="./static/images/item_difficulties_all.png" 
-             alt="Item Difficulty Comparison"/>
-      </div>
-    </div>
-    </div>
-
-
-    <!-- Finding 5 -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h3 class="title is-4">
-        Finding 5: LLM Alignment to Human Crowd-Workers
-        </h3>
-        <div class="content">
-            <ul>
-              <li>LLMs preserve human-like ranking of hate severity but show systematic leniency. MFRM calibration corrects these 
-                rater effects, revealing that raw LLM scores are not directly comparable to human judgments without accounting 
-                for differences in annotation behavior.</li>
-            </ul>
+        <img src="./static/images/correlations_aisi.png"
+               alt="Human-LLM Correlation"
+               style="object-fit: contain; 
+                      width: 90%;"/>
+          <img src="./static/images/fit_stats_human.png"
+               alt="Fit Statistics Comparison"
+               style="object-fit: contain; 
+                      width: 90%;"/>
+          <img src="./static/images/old_vs_new_plot.png"
+               alt="Joint MFRM Theta Comparison"
+               style="object-fit: contain; 
+                      width: 90%;"/>
         </div>
-      <img src="./static/images/human_llm_theta.png" 
-           alt="human llm theta Comparison"
-           style="object-fit: contain; width: 90%;"/>
       </div>
-    </div>
-  </div>
-  <!-- Finding 4 -->
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h3 class="title is-4">
-        Finding 6: LLM not fit for standalone moderation, but can be used to augment human moderation.
-      </h3>
-      <div class="content">
-        <p>
-          LLM annotation unreliability is concentrated at two intersecting points: <strong> ambiguous dimensions (e.g HUMILIATION, STATUS, DEHUMANIZATION)
-          and low-severity comments</strong>. Both are precisely the cases most relevant to early-stage hate speech intervention, supporting RQ1
-        </p>
-      </div>
-      <img src="./static/images/quantile_biased.png" 
-           alt="quantile_llm_biases"
-           style="object-fit: contain; width: 90%;"/>
     </div>
   </div>
 </section>
@@ -388,8 +409,8 @@
     <pre><code>@article{ngueajio2026miscalibrated,
   author    = {Ngueajio, Mikel K. and Battle, Rick and Arafat, Naheed Anjum and Rawat, Danda B.},
   title     = {Miscalibrated Judges: A Psychometric Evaluation of LLMs as Hate Speech Raters},
-  journal   = {PROCEEDINGS OF AAAI AI FOR ETHICS AND SOCIETY},
-  year      = {2026},
+  journal   = {PROCEEDINGS OF AAAI AI FOR SOCIAL IMPACT},
+  year      = {2027},
 }</code></pre>
   </div>
 </section>
@@ -398,7 +419,7 @@
   <div class="container is-max-desktop content">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/images/AIES_2026_Final_draft.pdf">
+         href="./static/images/AAAI_AISI_final_draft_2026.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
       <a class="icon-link" href="https://github.com/MikelKN" class="external-link" disabled>
