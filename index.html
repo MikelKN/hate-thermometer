@@ -351,7 +351,7 @@
      <div class="columns is-centered">
       <div class="column is-full-width">
         <h3 class="title is-4">
-          Finding 3: Cross Cultural Model Comparison.
+          Finding 5: Cross Cultural Model Comparison.
         </h3>
         <div class="content">
           <p>
@@ -385,23 +385,42 @@
             hate speech psychometrics.
           </p>
         </div>
-        <img src="./static/images/correlations_aisi.png"
-               alt="Human-LLM Correlation"
-               style="object-fit: contain; 
-                      width: 90%;"/>
-          <img src="./static/images/fit_stats_human.png"
-               alt="Fit Statistics Comparison"
-               style="object-fit: contain; 
-                      width: 90%;"/>
-          <img src="./static/images/old_vs_new_plot.png"
-               alt="Joint MFRM Theta Comparison"
-               style="object-fit: contain; 
-                      width: 90%;"/>
+        <!-- Two columns side by side -->
+          <div class="columns is-centered">
+            <!-- LEFT: Pipeline -->
+            <div class="column is-half has-text-centered">
+              <h3 class="title is-4" style="margin-top: 1.2rem;">LLM Human Correlation</h3>
+              <figure class="image">
+                <img src="./static/images/correlations_aisi.png"
+                    alt="Human-LLM Correlation"
+                    style="object-fit: contain; width: 100%;"/>
+              </figure>
+            </div>
+
+        <!-- RIGHT: Both annotation schemes stacked -->
+
+        <div class="column is-half has-text-centered">
+          <div style="width: 100%; margin: 0 auto;">
+            <!-- Annotation Scheme Column -->
+            <h3 class="title is-4" style="margin-top: 1.2rem; margin-right:3.5em">LLM-Human Fit Statistics</h3>
+            <figure class="image">
+              <img src="./static/images/hs_annotation.png"
+                    alt="Fit Statistics Comparison"
+                    style="object-fit: contain; width: 82%;"/>
+            </figure>
+
+            <h3 class="title is-4" style="margin-top: 1.2rem; margin-right:3.5em;">LLM Dimensions Annotation</h3>
+            <figure class="image">
+              <img src="./static/images/new_vs_old_plot.png"
+                    alt="Joint MFRM Theta Comparison"
+                    style="object-fit: contain; width: 82%;"/>
+            </figure>
+          </div>
         </div>
       </div>
-    </div>
   </div>
 </section>
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
